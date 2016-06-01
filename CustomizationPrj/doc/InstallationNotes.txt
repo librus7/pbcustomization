@@ -1,0 +1,15 @@
+To build, need to add the following to library-Customisation-path in bundle.properties in your software folder...
+
+
+components/modules/local/lib/commons-beanutils-1.9.2.jar
+components/system/lib/platform-core.jar
+components/system/lib/framework-application-container.jar
+
+Also - need to change software/lib/customisation/build-project.xml to build against 1.7 sources (because 1.6 is just too old skool)
+
+Also change classpath to include modules/local/lib, by inserting the <pathelement> into bundle.classpath:
+
+    <path id="bundle.classpath">
+        <pathelement path="${software.folder}/components/modules/local/lib/*" />
+        <pathelement path="${library-Customisation-path}" />
+    </path>

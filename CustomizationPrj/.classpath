@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/gen/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="com.misys.tiplus2.software_bundle_registration.TIPLUS2_SDK_CPE_CONTAINER/ti2.5.69-sdk/Customisation"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MetadataEnricher"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/PiraeusDMSClient"/>
+	<classpathentry kind="lib" path="C:/Programs/Misys2.5.69/software/components/system/lib/framework-application-container.jar"/>
+	<classpathentry kind="lib" path="C:/Programs/Misys2.5.69/software/components/system/lib/platform-core.jar"/>
+	<classpathentry kind="lib" path="C:/Programs/Misys2.5.69/software/components/system/lib/foundations-web-1.0.11.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
