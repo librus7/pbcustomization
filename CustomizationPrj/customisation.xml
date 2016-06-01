@@ -306,9 +306,11 @@
                 </field>
                 <field column="GOODCODE" name="GoodsCode" code="ABP">
                     <description><![CDATA[Goods code]]></description>
-                    <dbtype type="DB_VARCHAR" length="35"/>
+                    <dbtype type="DB_CHAR" length="11"/>
                     <control-type>
-                        <text lines="1"/>
+                        <browser static="PIRGOODSCODEFULL.CODE">
+                            <label-text><![CDATA[Goods Code]]></label-text>
+                        </browser>
                     </control-type>
                 </field>
                 <field column="GOODPROD" name="GoodsProductionCountry" code="ABV">
@@ -328,6 +330,13 @@
                 <field column="COVERID" name="CoverSheetId" code="ZCS">
                     <description><![CDATA[Cover Sheet Id]]></description>
                     <dbtype type="DB_INTEGER"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="GOODSDSC" name="GoodsShortDescription" code="AAU">
+                    <description><![CDATA[Goods Short Description]]></description>
+                    <dbtype type="DB_VARCHAR" length="80"/>
                     <control-type>
                         <text lines="1"/>
                     </control-type>
@@ -403,6 +412,7 @@
                     <field-ref name="GOODCODE"/>
                     <field-ref name="GOODPROD"/>
                     <field-ref name="COVERID"/>
+                    <field-ref name="GOODSDSC"/>
                 </field-group>
                 <field-group name="ISB">
                     <field-ref name="APRV_NUM"/>
@@ -888,10 +898,13 @@
                     <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
                     <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
                     <label row="10" column="1" colspan="1" control-ref=""><![CDATA[Goods code]]></label>
-                    <button row="12" column="1" colspan="1" name="GenerateCoverSheet">
+                    <button row="13" column="1" colspan="1" name="GenerateCoverSheet">
                         <caption><![CDATA[Generate Cover Sheet]]></caption>
                     </button>
-                    <hyperlink row="12" column="2" colspan="1" name="ViewCoverSheet" target="coversheetviewer">
+                    <button row="11" column="2" colspan="1" name="GoodsCodeShortDescriptionBtn">
+                        <caption><![CDATA[Goods Code Short Descr]]></caption>
+                    </button>
+                    <hyperlink row="13" column="2" colspan="1" name="ViewCoverSheet" target="coversheetviewer">
                         <caption><![CDATA[View Cover Sheet]]></caption>
                         <default><![CDATA[https://./coversheetviewer.jsp]]></default>
                     </hyperlink>
@@ -904,7 +917,8 @@
                     <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" validation="optional"/>
                     <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" validation="optional"/>
                     <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" validation="optional"/>
-                    <control field="GOODCODE" row="10" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="GOODCODE" row="10" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODSDSC" row="10" column="3" colspan="2" rowspan="2" validation="optional"/>
                 </layout>
                 <layout name="LinkCorrespondence_LEG" field-group="EGT">
                     <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
@@ -1772,13 +1786,6 @@
                         </combo>
                     </control-type>
                 </field>
-                <field column="GOODCODE" name="GoodsCode" code="ABQ">
-                    <description><![CDATA[Goods code]]></description>
-                    <dbtype type="DB_VARCHAR" length="35"/>
-                    <control-type>
-                        <text lines="1"/>
-                    </control-type>
-                </field>
                 <field column="DISCAMNT" name="DiscountAmount" code="ABB">
                     <description><![CDATA[Discount amount]]></description>
                     <dbtype type="TI_MONEY" reference="CCY"/>
@@ -1854,6 +1861,15 @@
                         <special type="country"/>
                     </control-type>
                 </field>
+                <field column="GOODCODE" name="GoodsCode" code="ABQ">
+                    <description><![CDATA[Goods code]]></description>
+                    <dbtype type="DB_CHAR" length="11"/>
+                    <control-type>
+                        <browser static="PIRGOODSCODEFULL.CODE">
+                            <label-text><![CDATA[Goods Code]]></label-text>
+                        </browser>
+                    </control-type>
+                </field>
             </fields>
             <layouts>
                 <layout name="Default" field-group="Default">
@@ -1901,6 +1917,32 @@
                     <description><![CDATA[CRS]]></description>
                     <dbtype type="DB_INTEGER"/>
                     <default><![CDATA[1]]></default>
+                </field>
+            </fields>
+        </static>
+        <static name="PIRGOODSCODEFULL" entity="GoodsCodeFull">
+            <description><![CDATA[Goods Code Full Descriptions]]></description>
+            <fields>
+                <field column="CODE" name="CODE">
+                    <description><![CDATA[CODE]]></description>
+                    <dbtype type="DB_CHAR" length="11"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="SHORTDSC" name="ShortDescription">
+                    <description><![CDATA[short description]]></description>
+                    <dbtype type="DB_VARCHAR" length="80"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="FULLDSC" name="FullDescription">
+                    <description><![CDATA[Goods Full Description]]></description>
+                    <dbtype type="DB_VARCHAR" length="2000"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
                 </field>
             </fields>
         </static>
