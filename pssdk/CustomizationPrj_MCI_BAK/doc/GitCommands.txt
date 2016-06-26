@@ -1,0 +1,33 @@
+
+git status
+git ls-files -v
+git update-index --assume-unchanged 
+git rm --cached 
+git ls-files -v | grep "^h" 
+
+
+git fetch origin
+
+
+Undo local repo and working tree to match a remote branch
+----------------------------------------------------------
+git reset --hard origin/master  
+ 
+ 
+Remove a file from index
+-------------------------
+git reset HEAD <file>
+git rm --cached [file]
+
+
+Unstaging a Staged File
+-----------------------
+git reset HEAD <file>
+
+Discard changes in working directory
+------------------------------------
+git checkout -- <file>
+
+Retry commiting again
+---------------------
+git commit --amend

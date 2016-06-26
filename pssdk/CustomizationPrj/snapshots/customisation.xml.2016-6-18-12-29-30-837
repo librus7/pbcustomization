@@ -1,0 +1,1981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customisation xmlns="urn:customisation.extension.tiplus2.misys.com" version="1.4" sdk="A">
+    <variants>
+    </variants>
+    <extensions>
+        <extension name="Customer">
+            <fields>
+                <field column="GRTAXNUM" name="GreekTaxationNumber" code="ABG">
+                    <description><![CDATA[Greek Taxation Number]]></description>
+                    <dbtype type="DB_CHAR" length="15"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="TAXOFFID" name="TaxOfficeID" code="ABH">
+                    <description><![CDATA[Tax Office ID]]></description>
+                    <dbtype type="DB_CHAR" length="4"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="DESTAXOF" name="DescTaxOffice" code="ABI">
+                    <description><![CDATA[Desc of Tax Office]]></description>
+                    <dbtype type="DB_CHAR" length="80"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="LEGEXDAT" name="LegalisationExpiryDate" code="ABJ">
+                    <description><![CDATA[Legalisation Expiry Date]]></description>
+                    <dbtype type="TI_DATE"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="PDTAXEXD" name="PeriodicDeclarationTaxesExpiryDate" code="ABL">
+                    <description><![CDATA[Periodic Declaration Taxes Expiry Date]]></description>
+                    <dbtype type="TI_DATE"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="APRVLUNT" name="ApprovalUnit" code="ABK">
+                    <description><![CDATA[Approval Unit]]></description>
+                    <dbtype type="DB_CHAR" length="5"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="LEGALEXP" name="LegalisationExpiry" code="ABM">
+                    <description><![CDATA[Legalisation Expiry]]></description>
+                    <dbtype type="TI_LOGICAL"/>
+                    <control-type>
+                        <checkbox true-value="Y" false-value="N">
+                            <label-text><![CDATA[Legalisation Expiry]]></label-text>
+                        </checkbox>
+                    </control-type>
+                </field>
+                <field column="PDTAXEXP" name="PeriodicDeclarationTaxesExpiry" code="ABN">
+                    <description><![CDATA[Periodic Declaration Taxes Expiry]]></description>
+                    <dbtype type="TI_LOGICAL"/>
+                    <control-type>
+                        <checkbox true-value="Y" false-value="N">
+                            <label-text><![CDATA[Periodic Declaration Taxes Expiry]]></label-text>
+                        </checkbox>
+                    </control-type>
+                </field>
+                <field column="CPRCSDAT" name="CurrProcessingDate" code="ABR">
+                    <description><![CDATA[Curr Processing Date]]></description>
+                    <dbtype type="TI_DATE"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="CUSTFNGR" name="CustomerFullNameGreek" code="ABS">
+                    <description><![CDATA[Customer Full Name - Greek]]></description>
+                    <dbtype type="DB_VARCHAR" length="120"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="CUSTFNLA" name="CustomerFullNameLatin" code="ABT">
+                    <description><![CDATA[Customer Full Name - Latin]]></description>
+                    <dbtype type="DB_VARCHAR" length="120"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="ACOFNAME" name="AccountOfficerFullName" code="ABU">
+                    <description><![CDATA[Account Officer Full Name]]></description>
+                    <dbtype type="DB_VARCHAR" length="120"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="TAXOFFAD" name="TaxOfficeAddress" code="ABO">
+                    <description><![CDATA[Tax Office Address]]></description>
+                    <dbtype type="DB_VARCHAR" length="140"/>
+                    <control-type>
+                        <text lines="4"/>
+                    </control-type>
+                </field>
+            </fields>
+            <layouts>
+                <layout name="Default" field-group="Default">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Greek Taxation Number]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Tax Office ID]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Tax Office Address]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Description of Tax Office]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Approval Unit]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Legalisation Expiry Date]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Periodic Declaration Taxes Expiry Date]]></label>
+                    <label row="9" column="1" colspan="1" control-ref=""><![CDATA[Customer Full Name - Greek]]></label>
+                    <label row="10" column="1" colspan="1" control-ref=""><![CDATA[Customer Full Name - Latin]]></label>
+                    <label row="11" column="1" colspan="1" control-ref=""><![CDATA[Account Officer Full Name]]></label>
+                    <horizontal-line row="8"/>
+                    <control field="GRTAXNUM" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="TAXOFFID" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="DESTAXOF" row="4" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="TAXOFFAD" row="3" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="APRVLUNT" row="5" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="LEGEXDAT" row="6" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="PDTAXEXD" row="7" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="CUSTFNGR" row="9" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="CUSTFNLA" row="10" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="ACOFNAME" row="11" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+            </layouts>
+            <associations>
+                <association major="C" minor="C">
+                    <layout-ref name="Default"/>
+                </association>
+            </associations>
+        </extension>
+        <extension name="Event">
+            <fields>
+                <field column="APP_USR" name="ApplicUser" code="AAC">
+                    <description><![CDATA[LOS Application User]]></description>
+                    <dbtype type="DB_VARCHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="APRV_NUM" name="ApprovedNumber" code="AAA">
+                    <description><![CDATA[Approved number]]></description>
+                    <dbtype type="DB_CHAR" length="10"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="LOS_NMBR" name="LOSnumber" code="AAD">
+                    <description><![CDATA[LOS Application number]]></description>
+                    <dbtype type="DB_CHAR" length="10"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="CHANNEL" name="Channel" code="AAE">
+                    <description><![CDATA[Channel]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="TI" display-value="TI"/>
+                                <entry key-value="MTP" display-value="MTP"/>
+                                <entry key-value="LOS" display-value="LOS"/>
+                                <entry key-value="MTPPRV" display-value="MTPPRV"/>
+                                <entry key-value="LOSPRV" display-value="LOSPRV"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="PRIORITY" name="Priority" code="AAF">
+                    <description><![CDATA[Priority]]></description>
+                    <dbtype type="DB_VARCHAR" length="1"/>
+                    <default><![CDATA[4]]></default>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="1" display-value="Urgent"/>
+                                <entry key-value="2" display-value="High"/>
+                                <entry key-value="3" display-value="Medium"/>
+                                <entry key-value="4" display-value="Low"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="BENFTYPE" name="BeneficiaryType" code="AAI">
+                    <description><![CDATA[Beneficiary Type]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="PRIVDOM" display-value="Private Domestic"/>
+                                <entry key-value="PRIVFRGN" display-value="Private Foreign"/>
+                                <entry key-value="PUBWLIM" display-value="Public within Limit"/>
+                                <entry key-value="PUBOLIM" display-value="Public outside Limit"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="CUATDEBC" name="CustAutoDebitedForCharges" code="AAJ">
+                    <description><![CDATA[Customer automatically debited for charges]]></description>
+                    <dbtype type="TI_LOGICAL"/>
+                    <default><![CDATA[Y]]></default>
+                    <control-type>
+                        <checkbox true-value="Y" false-value="N">
+                            <label-text><![CDATA[Customer automatically debited for charges]]></label-text>
+                        </checkbox>
+                    </control-type>
+                </field>
+                <field column="RESN_CNC" name="ReasonForCancellation" code="AAO">
+                    <description><![CDATA[Reason for cancellation]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="CLAIM" display-value="Guarantee cancelled due to claim"/>
+                                <entry key-value="RETURNED" display-value="Original guarantee has been returned"/>
+                                <entry key-value="BENREQST" display-value="Beneficiary request for cancellation"/>
+                                <entry key-value="PAYOUT" display-value="Buyer payment outside the guarantee"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="CASH_COL" name="CashCollateralCode" code="AAQ">
+                    <description><![CDATA[Cash collateral code]]></description>
+                    <dbtype type="DB_CHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="LOS_STUS" name="LOSApprovalStatus" code="AAS">
+                    <description><![CDATA[LOS Approval status]]></description>
+                    <dbtype type="DB_CHAR" length="35"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="PENDING" display-value="PENDING"/>
+                                <entry key-value="APPROVED" display-value="APPROVED"/>
+                                <entry key-value="REJECT" display-value="REJECT"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="TOTINVAM" name="TotalInvoiceAmount" code="AAW">
+                    <description><![CDATA[Total invoice amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_2"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="ADVPAYAM" name="AdvancedPaymentAmount" code="AAY">
+                    <description><![CDATA[Advanced payment amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_1"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="DISCAMNT" name="DiscountAmount" code="ABA">
+                    <description><![CDATA[Discount amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="INVOAMNT" name="InvoiceAmount" code="ABC">
+                    <description><![CDATA[Invoice amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_3"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="BANKOFGR" name="BANKofGR" code="ABE">
+                    <description><![CDATA[Bank of GR]]></description>
+                    <dbtype type="DB_CHAR" length="50"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="065" display-value="065  ;ΛΟΓ/ΣΜΟΙ ΜΕΤΑΞΥ ΚΑΤΟΙΚΩΝ ΣΕ ΞΝ"/>
+                                <entry key-value="090" display-value="090  ;ΚΛΕΙΣΙΜΟ ΠΡΟΣΩΡΙΝΟΥ ΛΟΓ. ΣΕ ΞΝ"/>
+                                <entry key-value="101" display-value="101  ;ΕΞΑΓΩΓΕΣ ΑΓΑΘΩΝ"/>
+                                <entry key-value="102" display-value="102  ;ΕΙΣΑΓΩΓΕΣ ΑΓΑΘΩΝ"/>
+                                <entry key-value="104" display-value="104  ;ΤΡΙΓΩΝΙΚΗ ΠΩΛΗΣΗ ΑΓΑΘΩΝ"/>
+                                <entry key-value="111" display-value="111  ;ΕΠΕΞΕΡΓΑΣΙΑ ΑΓΑΘΩΝ ΣΤΗΝ ΕΛΛΑΔΑ"/>
+                                <entry key-value="112" display-value="112  ;ΕΠΕΞΕΡΓΑΣΙΑ ΑΓΑΘΩΝ ΣΤΟ ΕΞΩΤΕΡ."/>
+                                <entry key-value="131" display-value="131  ;ΕΦΟΔΙΑ ΜΕΤΑΦΟΡΙΚΩΝ ΜΕΣΩΝ"/>
+                                <entry key-value="202" display-value="202  ;ΘΑΛΑΣΣΙΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="211" display-value="211  ;ΑΕΡΟΠΟΡΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="221" display-value="221  ;ΣΙΔΗΡΟΔΡΟΜΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="231" display-value="231  ;ΟΔΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="241" display-value="241  ;ΜΕΤΑΦΟΡΕΣ ΜΕΣΩ ΣΩΛΗΝΑΓΩΓΩΝ"/>
+                                <entry key-value="251" display-value="251  ;ΛΟΙΠΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="271" display-value="271  ;ΤΑΧΥΔΡΟΜΙΚΕΣ ΥΠΗΡΕΣΙΕΣ"/>
+                                <entry key-value="272" display-value="272  ;ΥΠΗΡΕΣΙΕΣ COURIER"/>
+                                <entry key-value="2911" display-value="2911 ;ΑΣΦΑΛΕΙΕΣ ΜΕΤΑΦΟΡΩΝ"/>
+                                <entry key-value="301" display-value="301  ;ΧΡΗΜΑΤΟΟΙΚΟΝΟΜΙΚΕΣ ΥΠΗΡΕΣΙΕΣ"/>
+                                <entry key-value="321" display-value="321  ;ROYALTIES"/>
+                                <entry key-value="331" display-value="331  ;ΔΙΑΦΟΡΑ ΑΞΙΑΣ ΤΡΙΓ.ΠΩΛ./ΑΓΟΡΑΣ"/>
+                                <entry key-value="332" display-value="332  ;ΛΟΙΠΕΣ ΕΜΠΟΡ. ΥΠΗΡ.(ΠΡΟΜ.ΑΝΤ.)"/>
+                                <entry key-value="911" display-value="911  ;ΣΥΜΨΗΦΙΣΜΟΣ"/>
+                                <entry key-value="924" display-value="924  ;ΕΜΒΑΣΜΑΤΑ ΚΑΝΟΝΙΣΜΟΥ 2560"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="GOODCODE" name="GoodsCode" code="ABP">
+                    <description><![CDATA[Goods code]]></description>
+                    <dbtype type="DB_VARCHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="GOODPROD" name="GoodsProductionCountry" code="ABV">
+                    <description><![CDATA[Goods Production Country]]></description>
+                    <dbtype type="TI_COUNTRY"/>
+                    <control-type>
+                        <special type="country"/>
+                    </control-type>
+                </field>
+                <field column="GOODDEST" name="GoodsDestinationCountry" code="ABX">
+                    <description><![CDATA[Goods Destination Country]]></description>
+                    <dbtype type="TI_COUNTRY"/>
+                    <control-type>
+                        <special type="country"/>
+                    </control-type>
+                </field>
+                <field column="COVERID" name="CoverSheetId" code="ZCS">
+                    <description><![CDATA[Cover Sheet Id]]></description>
+                    <dbtype type="DB_INTEGER"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+            </fields>
+            <repeating-fields>
+                <repeating-field name="TESTTABLE" table-suffix="TST" code="ZAU" manual-sort="true">
+                    <description><![CDATA[This is field TESTTABLE]]></description>
+                    <field column="SUX" name="SUX_Name" code="AAA">
+                        <description><![CDATA[This is field SUX_Name]]></description>
+                        <dbtype type="DB_CHAR" length="6"/>
+                        <control-type>
+                            <text lines="1"/>
+                        </control-type>
+                    </field>
+                    <field column="SUXA" name="SUXA_Name" code="AAB">
+                        <description><![CDATA[This is field SUXA_Name]]></description>
+                        <dbtype type="TI_MONEY" reference="CCY"/>
+                        <control-type>
+                            <special type="money"/>
+                        </control-type>
+                    </field>
+                </repeating-field>
+            </repeating-fields>
+            <field-groups>
+                <field-group name="COLL">
+                    <field-ref name="TOTINVAM"/>
+                    <field-ref name="ADVPAYAM"/>
+                    <field-ref name="INVOAMNT"/>
+                    <field-ref name="DISCAMNT"/>
+                    <field-ref name="BANKOFGR"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="GOODDEST"/>
+                    <field-ref name="GOODPROD"/>
+                    <field-ref name="COVERID"/>
+                </field-group>
+                <field-group name="EGT">
+                    <field-ref name="BENFTYPE"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="BANKOFGR"/>
+                </field-group>
+                <field-group name="ELC">
+                    <field-ref name="BANKOFGR"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="GOODDEST"/>
+                </field-group>
+                <field-group name="ESB">
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="BANKOFGR"/>
+                </field-group>
+                <field-group name="IGT">
+                    <field-ref name="APP_USR"/>
+                    <field-ref name="APRV_NUM"/>
+                    <field-ref name="LOS_NMBR"/>
+                    <field-ref name="CHANNEL"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="BENFTYPE"/>
+                    <field-ref name="CUATDEBC"/>
+                    <field-ref name="RESN_CNC"/>
+                    <field-ref name="CASH_COL"/>
+                    <field-ref name="LOS_STUS"/>
+                    <field-ref name="BANKOFGR"/>
+                </field-group>
+                <field-group name="ILC">
+                    <field-ref name="ADVPAYAM"/>
+                    <field-ref name="DISCAMNT"/>
+                    <field-ref name="INVOAMNT"/>
+                    <field-ref name="BANKOFGR"/>
+                    <field-ref name="APP_USR"/>
+                    <field-ref name="APRV_NUM"/>
+                    <field-ref name="LOS_STUS"/>
+                    <field-ref name="LOS_NMBR"/>
+                    <field-ref name="CHANNEL"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="GOODCODE"/>
+                    <field-ref name="GOODPROD"/>
+                    <field-ref name="COVERID"/>
+                </field-group>
+                <field-group name="ISB">
+                    <field-ref name="APRV_NUM"/>
+                    <field-ref name="CHANNEL"/>
+                    <field-ref name="APP_USR"/>
+                    <field-ref name="LOS_NMBR"/>
+                    <field-ref name="PRIORITY"/>
+                    <field-ref name="BENFTYPE"/>
+                    <field-ref name="RESN_CNC"/>
+                    <field-ref name="CUATDEBC"/>
+                    <field-ref name="LOS_STUS"/>
+                    <field-ref name="BANKOFGR"/>
+                </field-group>
+            </field-groups>
+            <layouts>
+                <layout name="Adjust_NADE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Adjust_NADI" field-group="ILC">
+                    <label row="9" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="10" column="1" colspan="1" control-ref=""><![CDATA[Goods code]]></label>
+                    <control field="ADVPAYAM" row="9" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Adjust_NJEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Adjust_NJES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Adjust_NJIG" field-group="IGT">
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Cash collateral code]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CUATDEBC" row="9" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CASH_COL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Adjust_NJIS" field-group="ISB">
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <control field="CUATDEBC" row="8" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="AdviseReductionIncrease_ZEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="AdviseReductionIncrease_ZES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="AdviseRenewal_YEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="AdviseRenewal_YES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="AdviseTakeon_EGTD" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="AdviseTakeon_ELCD" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Advise_ADE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Advise_VEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Advise_VES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAIG" field-group="IGT">
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Cash collateral code]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CUATDEBC" row="9" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CASH_COL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAIS" field-group="ISB">
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <control field="CUATDEBC" row="8" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAME" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Amend_NAMI" field-group="ILC">
+                    <label row="9" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="10" column="1" colspan="1" control-ref=""><![CDATA[Goods code]]></label>
+                    <control field="ADVPAYAM" row="9" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODCODE" row="10" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="AssignmentOfProceeds_ASS" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BackToBackLC_Issue_IBB" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenResCanc_FIG" field-group="IGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Reason for cancellation]]></label>
+                    <control field="RESN_CNC" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="BenRespCanc_FIS" field-group="ISB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Reason for cancellation]]></label>
+                    <control field="RESN_CNC" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="BenResponseToAmend_BNME" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenResponseToCancel_BCR" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenefResponseToAmend_NGEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenefResponseToAmend_NGES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenefResponseToCancel_FEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BenefResponseToCancel_FES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BookOff_BKF" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BookOff_KEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="BookOff_KES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_CAE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_CAI" field-group="ILC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_NEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_NES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_NIG" field-group="IGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Reason for cancellation]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="RESN_CNC" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Cancel_NIS" field-group="ISB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Reason for cancellation]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="RESN_CNC" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ClaimRec_CRC" field-group="ILC">
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Goods Production Country]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <control field="ADVPAYAM" row="6" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="DISCAMNT" row="4" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="INVOAMNT" row="5" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="GOODPROD" row="7" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                    <control field="PRIORITY" row="8" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="LOS_STUS" row="3" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="LOS_NMBR" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_CEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_CES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_CIG" field-group="IGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_CIS" field-group="ISB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_COE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Correspondence_COI" field-group="ILC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DataTakeon_EGTO" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DataTakeon_ELTO" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DataTakeon_ESTO" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Default" field-group="Default">
+                </layout>
+                <layout name="DiscountPayment_LDE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DocsPresented_DOP" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Goods Destination Country]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="GOODDEST" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DocsPresented_EES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="DocumentsPresented_EEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Expire_EXP" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Expire_XEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Expire_XES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Finance_FGT" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Finance_FLC" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Finance_FSB" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ICC_Adjust_NCAJ" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="ICC_Amend_NCAM" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="ICC_Correspondence_CCO" field-group="COLL">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ICC_Create_CRE" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Goods Production Country]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODPROD" row="6" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                </layout>
+                <layout name="ICC_Payment_CLP" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="IDC_Adjust_NCAJ" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="IDC_Amend_NCAM" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="IDC_Correspondence_CCO" field-group="COLL">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="IDC_Create_CRE" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Goods Production Country]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODPROD" row="6" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                </layout>
+                <layout name="IDC_Payment_CLP" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Issue_IIG" field-group="IGT">
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Cash collateral code]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CUATDEBC" row="9" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CASH_COL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Issue_IIS" field-group="ISB">
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Beneficiary Type]]></label>
+                    <control field="CUATDEBC" row="8" column="1" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="BENFTYPE" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="Issue_ISI" field-group="ILC">
+                    <label row="9" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Approved number]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Channel]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="10" column="1" colspan="1" control-ref=""><![CDATA[Goods code]]></label>
+                    <control field="ADVPAYAM" row="9" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="8" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="7" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="APRV_NUM" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="LOS_NMBR" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="readonly"/>
+                    <control field="LOS_STUS" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="CHANNEL" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="6" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODCODE" row="10" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="LinkCorrespondence_LEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="LinkCorrespondence_LES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="LinkCorrespondence_LNE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainChargesCOLL_MCC" field-group="COLL">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MAC" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="PRIORITY" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MCI" field-group="ILC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="PRIORITY" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="PRIORITY" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MIG" field-group="IGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="MaintainCharges_MIS" field-group="ISB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Bank of GR]]></label>
+                    <control field="BANKOFGR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainLiability_MLEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainLiability_MLEL" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="MaintainLiability_MLES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ManualBookkeeping_BEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ManualBookkeeping_BES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ManualBookkeeping_MBE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OCC_Adjust_NCAJ" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="OCC_Amend_NCAM" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="OCC_Correspondence_CCO" field-group="COLL">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OCC_Create_CRE" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Goods Destination Country]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODDEST" row="6" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                </layout>
+                <layout name="OCC_Payment_CLP" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="ODC_Adjust_NCAJ" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="ODC_Amend_NCAM" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="ODC_Correspondence_CCO" field-group="COLL">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ODC_Create_CRE" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Goods Destination Country]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="GOODDEST" row="6" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                </layout>
+                <layout name="ODC_Payment_CLP" field-group="COLL">
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[Total invoice amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="TOTINVAM" row="3" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="ADVPAYAM" row="4" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="DISCAMNT" row="1" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="INVOAMNT" row="2" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                    <control field="PRIORITY" row="5" column="2" colspan="1" rowspan="1" auto-submit="true" validation="optional"/>
+                </layout>
+                <layout name="OldAdjustESB_JES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldAdjust_AJE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldAdjust_JEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldAmend_AEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldAmend_AES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldBenResponseAmendTransfer_BAT" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldBenResponseToAmend_BRE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldBenResponseToAmend_GES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldBeneficiaryResponseToAmend_GEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OldExportLC_AME" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OutstandingClaim_POC" field-group="ILC">
+                    <label row="6" column="1" colspan="1" control-ref=""><![CDATA[Advanced payment amount]]></label>
+                    <label row="4" column="1" colspan="1" control-ref=""><![CDATA[Discount amount]]></label>
+                    <label row="5" column="1" colspan="1" control-ref=""><![CDATA[Invoice amount]]></label>
+                    <label row="7" column="1" colspan="1" control-ref=""><![CDATA[Goods Production Country]]></label>
+                    <label row="8" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[LOS Application user]]></label>
+                    <label row="2" column="1" colspan="1" control-ref=""><![CDATA[LOS Application number]]></label>
+                    <label row="3" column="1" colspan="1" control-ref=""><![CDATA[LOS Approval status]]></label>
+                    <control field="ADVPAYAM" row="6" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="DISCAMNT" row="4" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="INVOAMNT" row="5" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="GOODPROD" row="7" column="2" colspan="1" rowspan="1" validation="mandatory"/>
+                    <control field="PRIORITY" row="8" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="APP_USR" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="LOS_NMBR" row="2" column="2" colspan="1" rowspan="1" validation="optional"/>
+                    <control field="LOS_STUS" row="3" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OutstandingPresentation_OEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OutstandingPresentation_OES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="OutstandingPresentation_POD" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="PayPeriodicChange_PEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="PayPeriodicCharge_PCE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="PayPeriodicCharge_PES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="PreAdvise_PAE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ReceiveAcknowledgement_QEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ReceiveAcknowledgement_QES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ReceiveAcknowledgement_RAE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ReductionIncrease_DEG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="ReductionIncrease_DES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Renew_REG" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Renew_RES" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="RevolveNotice_RNE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Revolve_RVE" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TracerELC_TRC" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TracerESB_TRC" field-group="ESB">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Tracer_TRC" field-group="EGT">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferBenResponseCancel_BCT" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferCancel_CTX" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferCorrespond_COEX" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferELCReceiveAcknowl_RAEX" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferExpire_EXT" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferLCBenRespAmend_NBAT" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferLC_Adjust_NTRJ" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferLC_Amend_NTRM" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferOldAdjust_AJT" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="TransferOldAmend_ATX" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+                <layout name="Transfer_ITX" field-group="ELC">
+                    <label row="1" column="1" colspan="1" control-ref=""><![CDATA[Priority]]></label>
+                    <control field="PRIORITY" row="1" column="2" colspan="1" rowspan="1" validation="optional"/>
+                </layout>
+            </layouts>
+            <associations>
+                <association major="EGT" minor="AEG">
+                    <layout-ref name="OldAmend_AEG"/>
+                </association>
+                <association major="EGT" minor="BEG">
+                    <layout-ref name="ManualBookkeeping_BEG"/>
+                </association>
+                <association major="EGT" minor="CEG">
+                    <layout-ref name="Correspondence_CEG"/>
+                </association>
+                <association major="EGT" minor="DEG">
+                    <layout-ref name="ReductionIncrease_DEG"/>
+                </association>
+                <association major="EGT" minor="EEG">
+                    <layout-ref name="DocumentsPresented_EEG"/>
+                </association>
+                <association major="EGT" minor="EGTD">
+                    <layout-ref name="AdviseTakeon_EGTD"/>
+                </association>
+                <association major="EGT" minor="EGTO">
+                    <layout-ref name="DataTakeon_EGTO"/>
+                </association>
+                <association major="EGT" minor="FEG">
+                    <layout-ref name="BenefResponseToCancel_FEG"/>
+                </association>
+                <association major="EGT" minor="FGT">
+                    <layout-ref name="Finance_FGT"/>
+                </association>
+                <association major="EGT" minor="GEG">
+                    <layout-ref name="OldBeneficiaryResponseToAmend_GEG"/>
+                </association>
+                <association major="EGT" minor="JEG">
+                    <layout-ref name="OldAdjust_JEG"/>
+                </association>
+                <association major="EGT" minor="KEG">
+                    <layout-ref name="BookOff_KEG"/>
+                </association>
+                <association major="EGT" minor="LEG">
+                    <layout-ref name="LinkCorrespondence_LEG"/>
+                </association>
+                <association major="EGT" minor="MEG">
+                    <layout-ref name="MaintainCharges_MEG"/>
+                </association>
+                <association major="EGT" minor="MLEG">
+                    <layout-ref name="MaintainLiability_MLEG"/>
+                </association>
+                <association major="EGT" minor="NAEG">
+                    <layout-ref name="Amend_NAEG"/>
+                </association>
+                <association major="EGT" minor="NEG">
+                    <layout-ref name="Cancel_NEG"/>
+                </association>
+                <association major="EGT" minor="NGEG">
+                    <layout-ref name="BenefResponseToAmend_NGEG"/>
+                </association>
+                <association major="EGT" minor="NJEG">
+                    <layout-ref name="Adjust_NJEG"/>
+                </association>
+                <association major="EGT" minor="OEG">
+                    <layout-ref name="OutstandingPresentation_OEG"/>
+                </association>
+                <association major="EGT" minor="PEG">
+                    <layout-ref name="PayPeriodicChange_PEG"/>
+                </association>
+                <association major="EGT" minor="QEG">
+                    <layout-ref name="ReceiveAcknowledgement_QEG"/>
+                </association>
+                <association major="EGT" minor="REG">
+                    <layout-ref name="Renew_REG"/>
+                </association>
+                <association major="EGT" minor="TRC">
+                    <layout-ref name="Tracer_TRC"/>
+                </association>
+                <association major="EGT" minor="VEG">
+                    <layout-ref name="Advise_VEG"/>
+                </association>
+                <association major="EGT" minor="XEG">
+                    <layout-ref name="Expire_XEG"/>
+                </association>
+                <association major="EGT" minor="YEG">
+                    <layout-ref name="AdviseRenewal_YEG"/>
+                </association>
+                <association major="EGT" minor="ZEG">
+                    <layout-ref name="AdviseReductionIncrease_ZEG"/>
+                </association>
+                <association major="ELC" minor="ADE">
+                    <layout-ref name="Advise_ADE"/>
+                </association>
+                <association major="ELC" minor="AJE">
+                    <layout-ref name="OldAdjust_AJE"/>
+                </association>
+                <association major="ELC" minor="AJT">
+                    <layout-ref name="TransferOldAdjust_AJT"/>
+                </association>
+                <association major="ELC" minor="AME">
+                    <layout-ref name="OldExportLC_AME"/>
+                </association>
+                <association major="ELC" minor="ASS">
+                    <layout-ref name="AssignmentOfProceeds_ASS"/>
+                </association>
+                <association major="ELC" minor="ATX">
+                    <layout-ref name="TransferOldAmend_ATX"/>
+                </association>
+                <association major="ELC" minor="BAT">
+                    <layout-ref name="OldBenResponseAmendTransfer_BAT"/>
+                </association>
+                <association major="ELC" minor="BCR">
+                    <layout-ref name="BenResponseToCancel_BCR"/>
+                </association>
+                <association major="ELC" minor="BCT">
+                    <layout-ref name="TransferBenResponseCancel_BCT"/>
+                </association>
+                <association major="ELC" minor="BKF">
+                    <layout-ref name="BookOff_BKF"/>
+                </association>
+                <association major="ELC" minor="BNME">
+                    <layout-ref name="BenResponseToAmend_BNME"/>
+                </association>
+                <association major="ELC" minor="BRE">
+                    <layout-ref name="OldBenResponseToAmend_BRE"/>
+                </association>
+                <association major="ELC" minor="CAE">
+                    <layout-ref name="Cancel_CAE"/>
+                </association>
+                <association major="ELC" minor="COE">
+                    <layout-ref name="Correspondence_COE"/>
+                </association>
+                <association major="ELC" minor="COEX">
+                    <layout-ref name="TransferCorrespond_COEX"/>
+                </association>
+                <association major="ELC" minor="CTX">
+                    <layout-ref name="TransferCancel_CTX"/>
+                </association>
+                <association major="ELC" minor="DOP">
+                    <layout-ref name="DocsPresented_DOP"/>
+                </association>
+                <association major="ELC" minor="ELCD">
+                    <layout-ref name="AdviseTakeon_ELCD"/>
+                </association>
+                <association major="ELC" minor="ELTO">
+                    <layout-ref name="DataTakeon_ELTO"/>
+                </association>
+                <association major="ELC" minor="EXP">
+                    <layout-ref name="Expire_EXP"/>
+                </association>
+                <association major="ELC" minor="EXT">
+                    <layout-ref name="TransferExpire_EXT"/>
+                </association>
+                <association major="ELC" minor="FLC">
+                    <layout-ref name="Finance_FLC"/>
+                </association>
+                <association major="ELC" minor="IBB">
+                    <layout-ref name="BackToBackLC_Issue_IBB"/>
+                </association>
+                <association major="ELC" minor="ITX">
+                    <layout-ref name="Transfer_ITX"/>
+                </association>
+                <association major="ELC" minor="LDE">
+                    <layout-ref name="DiscountPayment_LDE"/>
+                </association>
+                <association major="ELC" minor="LNE">
+                    <layout-ref name="LinkCorrespondence_LNE"/>
+                </association>
+                <association major="ELC" minor="MAC">
+                    <layout-ref name="MaintainCharges_MAC"/>
+                </association>
+                <association major="ELC" minor="MBE">
+                    <layout-ref name="ManualBookkeeping_MBE"/>
+                </association>
+                <association major="ELC" minor="MLEL">
+                    <layout-ref name="MaintainLiability_MLEL"/>
+                </association>
+                <association major="ELC" minor="NADE">
+                    <layout-ref name="Adjust_NADE"/>
+                </association>
+                <association major="ELC" minor="NAME">
+                    <layout-ref name="Amend_NAME"/>
+                </association>
+                <association major="ELC" minor="NBAT">
+                    <layout-ref name="TransferLCBenRespAmend_NBAT"/>
+                </association>
+                <association major="ELC" minor="NTRJ">
+                    <layout-ref name="TransferLC_Adjust_NTRJ"/>
+                </association>
+                <association major="ELC" minor="NTRM">
+                    <layout-ref name="TransferLC_Amend_NTRM"/>
+                </association>
+                <association major="ELC" minor="PAE">
+                    <layout-ref name="PreAdvise_PAE"/>
+                </association>
+                <association major="ELC" minor="PCE">
+                    <layout-ref name="PayPeriodicCharge_PCE"/>
+                </association>
+                <association major="ELC" minor="POD">
+                    <layout-ref name="OutstandingPresentation_POD"/>
+                </association>
+                <association major="ELC" minor="RAE">
+                    <layout-ref name="ReceiveAcknowledgement_RAE"/>
+                </association>
+                <association major="ELC" minor="RAEX">
+                    <layout-ref name="TransferELCReceiveAcknowl_RAEX"/>
+                </association>
+                <association major="ELC" minor="RNE">
+                    <layout-ref name="RevolveNotice_RNE"/>
+                </association>
+                <association major="ELC" minor="RVE">
+                    <layout-ref name="Revolve_RVE"/>
+                </association>
+                <association major="ELC" minor="TRC">
+                    <layout-ref name="TracerELC_TRC"/>
+                </association>
+                <association major="ESB" minor="AES">
+                    <layout-ref name="OldAmend_AES"/>
+                </association>
+                <association major="ESB" minor="BES">
+                    <layout-ref name="ManualBookkeeping_BES"/>
+                </association>
+                <association major="ESB" minor="CES">
+                    <layout-ref name="Correspondence_CES"/>
+                </association>
+                <association major="ESB" minor="DES">
+                    <layout-ref name="ReductionIncrease_DES"/>
+                </association>
+                <association major="ESB" minor="EES">
+                    <layout-ref name="DocsPresented_EES"/>
+                </association>
+                <association major="ESB" minor="ESTO">
+                    <layout-ref name="DataTakeon_ESTO"/>
+                </association>
+                <association major="ESB" minor="FES">
+                    <layout-ref name="BenefResponseToCancel_FES"/>
+                </association>
+                <association major="ESB" minor="FSB">
+                    <layout-ref name="Finance_FSB"/>
+                </association>
+                <association major="ESB" minor="GES">
+                    <layout-ref name="OldBenResponseToAmend_GES"/>
+                </association>
+                <association major="ESB" minor="JES">
+                    <layout-ref name="OldAdjustESB_JES"/>
+                </association>
+                <association major="ESB" minor="KES">
+                    <layout-ref name="BookOff_KES"/>
+                </association>
+                <association major="ESB" minor="LES">
+                    <layout-ref name="LinkCorrespondence_LES"/>
+                </association>
+                <association major="ESB" minor="MES">
+                    <layout-ref name="MaintainCharges_MES"/>
+                </association>
+                <association major="ESB" minor="MLES">
+                    <layout-ref name="MaintainLiability_MLES"/>
+                </association>
+                <association major="ESB" minor="NAES">
+                    <layout-ref name="Amend_NAES"/>
+                </association>
+                <association major="ESB" minor="NES">
+                    <layout-ref name="Cancel_NES"/>
+                </association>
+                <association major="ESB" minor="NGES">
+                    <layout-ref name="BenefResponseToAmend_NGES"/>
+                </association>
+                <association major="ESB" minor="NJES">
+                    <layout-ref name="Adjust_NJES"/>
+                </association>
+                <association major="ESB" minor="OES">
+                    <layout-ref name="OutstandingPresentation_OES"/>
+                </association>
+                <association major="ESB" minor="PES">
+                    <layout-ref name="PayPeriodicCharge_PES"/>
+                </association>
+                <association major="ESB" minor="QES">
+                    <layout-ref name="ReceiveAcknowledgement_QES"/>
+                </association>
+                <association major="ESB" minor="RES">
+                    <layout-ref name="Renew_RES"/>
+                </association>
+                <association major="ESB" minor="TRC">
+                    <layout-ref name="TracerESB_TRC"/>
+                </association>
+                <association major="ESB" minor="VES">
+                    <layout-ref name="Advise_VES"/>
+                </association>
+                <association major="ESB" minor="XES">
+                    <layout-ref name="Expire_XES"/>
+                </association>
+                <association major="ESB" minor="YES">
+                    <layout-ref name="AdviseRenewal_YES"/>
+                </association>
+                <association major="ESB" minor="ZES">
+                    <layout-ref name="AdviseReductionIncrease_ZES"/>
+                </association>
+                <association major="ICC" minor="CCO">
+                    <layout-ref name="ICC_Correspondence_CCO"/>
+                </association>
+                <association major="ICC" minor="CLP">
+                    <layout-ref name="ICC_Payment_CLP"/>
+                </association>
+                <association major="ICC" minor="CRE">
+                    <layout-ref name="ICC_Create_CRE"/>
+                </association>
+                <association major="ICC" minor="MCC">
+                    <layout-ref name="MaintainChargesCOLL_MCC"/>
+                </association>
+                <association major="ICC" minor="NCAJ">
+                    <layout-ref name="ICC_Adjust_NCAJ"/>
+                </association>
+                <association major="ICC" minor="NCAM">
+                    <layout-ref name="ICC_Amend_NCAM"/>
+                </association>
+                <association major="IDC" minor="CCO">
+                    <layout-ref name="IDC_Correspondence_CCO"/>
+                </association>
+                <association major="IDC" minor="CLP">
+                    <layout-ref name="IDC_Payment_CLP"/>
+                </association>
+                <association major="IDC" minor="CRE">
+                    <layout-ref name="IDC_Create_CRE"/>
+                </association>
+                <association major="IDC" minor="MCC">
+                    <layout-ref name="MaintainChargesCOLL_MCC"/>
+                </association>
+                <association major="IDC" minor="NCAJ">
+                    <layout-ref name="IDC_Adjust_NCAJ"/>
+                </association>
+                <association major="IDC" minor="NCAM">
+                    <layout-ref name="IDC_Amend_NCAM"/>
+                </association>
+                <association major="IGT" minor="CIG">
+                    <layout-ref name="Correspondence_CIG"/>
+                </association>
+                <association major="IGT" minor="FIG">
+                    <layout-ref name="BenResCanc_FIG"/>
+                </association>
+                <association major="IGT" minor="IGTD">
+                    <layout-ref name="Issue_IIG"/>
+                </association>
+                <association major="IGT" minor="IIG">
+                    <layout-ref name="Issue_IIG" extension-handler="com.piraeus.component.LegalDeclComponent"/>
+                </association>
+                <association major="IGT" minor="MIG">
+                    <layout-ref name="MaintainCharges_MIG"/>
+                </association>
+                <association major="IGT" minor="NAIG">
+                    <layout-ref name="Amend_NAIG"/>
+                </association>
+                <association major="IGT" minor="NIG">
+                    <layout-ref name="Cancel_NIG"/>
+                </association>
+                <association major="IGT" minor="NJIG">
+                    <layout-ref name="Adjust_NJIG"/>
+                </association>
+                <association major="ILC" minor="CAI">
+                    <layout-ref name="Cancel_CAI"/>
+                </association>
+                <association major="ILC" minor="COI">
+                    <layout-ref name="Correspondence_COI"/>
+                </association>
+                <association major="ILC" minor="CRC">
+                    <layout-ref name="ClaimRec_CRC"/>
+                </association>
+                <association major="ILC" minor="ILCD">
+                    <layout-ref name="Issue_ISI"/>
+                </association>
+                <association major="ILC" minor="ISI">
+                    <layout-ref name="Issue_ISI" extension-handler="com.piraeus.component.LegalDeclComponent"/>
+                </association>
+                <association major="ILC" minor="MCI">
+                    <layout-ref name="MaintainCharges_MCI"/>
+                </association>
+                <association major="ILC" minor="NADI">
+                    <layout-ref name="Adjust_NADI"/>
+                </association>
+                <association major="ILC" minor="NAMI">
+                    <layout-ref name="Amend_NAMI"/>
+                </association>
+                <association major="ILC" minor="POC">
+                    <layout-ref name="OutstandingClaim_POC"/>
+                </association>
+                <association major="ISB" minor="CIS">
+                    <layout-ref name="Correspondence_CIS"/>
+                </association>
+                <association major="ISB" minor="FIS">
+                    <layout-ref name="BenRespCanc_FIS"/>
+                </association>
+                <association major="ISB" minor="IIS">
+                    <layout-ref name="Issue_IIS" extension-handler="com.piraeus.component.LegalDeclComponent"/>
+                </association>
+                <association major="ISB" minor="MIS">
+                    <layout-ref name="MaintainCharges_MIS"/>
+                </association>
+                <association major="ISB" minor="NAIS">
+                    <layout-ref name="Amend_NAIS"/>
+                </association>
+                <association major="ISB" minor="NIS">
+                    <layout-ref name="Cancel_NIS"/>
+                </association>
+                <association major="ISB" minor="NJIS">
+                    <layout-ref name="Adjust_NJIS"/>
+                </association>
+                <association major="OCC" minor="CCO">
+                    <layout-ref name="OCC_Correspondence_CCO"/>
+                </association>
+                <association major="OCC" minor="CLP">
+                    <layout-ref name="OCC_Payment_CLP"/>
+                </association>
+                <association major="OCC" minor="CRE">
+                    <layout-ref name="OCC_Create_CRE"/>
+                </association>
+                <association major="OCC" minor="MCC">
+                    <layout-ref name="MaintainChargesCOLL_MCC"/>
+                </association>
+                <association major="OCC" minor="NCAJ">
+                    <layout-ref name="OCC_Adjust_NCAJ"/>
+                </association>
+                <association major="OCC" minor="NCAM">
+                    <layout-ref name="OCC_Amend_NCAM"/>
+                </association>
+                <association major="ODC" minor="CCO">
+                    <layout-ref name="ODC_Correspondence_CCO"/>
+                </association>
+                <association major="ODC" minor="CLP">
+                    <layout-ref name="ODC_Payment_CLP"/>
+                </association>
+                <association major="ODC" minor="CRE">
+                    <layout-ref name="ODC_Create_CRE"/>
+                </association>
+                <association major="ODC" minor="MCC">
+                    <layout-ref name="MaintainChargesCOLL_MCC"/>
+                </association>
+                <association major="ODC" minor="NCAJ">
+                    <layout-ref name="ODC_Adjust_NCAJ"/>
+                </association>
+                <association major="ODC" minor="NCAM">
+                    <layout-ref name="ODC_Amend_NCAM"/>
+                </association>
+            </associations>
+        </extension>
+        <extension name="Master">
+            <fields>
+                <field column="APP_USR" name="ApplicUser" code="AAB">
+                    <description><![CDATA[LOS Application User]]></description>
+                    <dbtype type="DB_VARCHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="APRV_NUM" name="ApprovedNumber" code="AAH">
+                    <description><![CDATA[Approved number]]></description>
+                    <dbtype type="DB_CHAR" length="10"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="LOS_NMBR" name="LOSnumber" code="AAG">
+                    <description><![CDATA[LOS Application number]]></description>
+                    <dbtype type="DB_CHAR" length="10"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="BENFTYPE" name="BeneficiaryType" code="AAL">
+                    <description><![CDATA[Beneficiary Type]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="PRIVDOM" display-value="Private Domestic"/>
+                                <entry key-value="PRIVFRGN" display-value="Private Foreign"/>
+                                <entry key-value="PUBWLIM" display-value="Public within Limit"/>
+                                <entry key-value="PUBOLIM" display-value="Public outside Limit"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="RESN_CNC" name="ReasonForCancellation" code="AAP">
+                    <description><![CDATA[Reason for cancellation]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="CLAIM" display-value="Guarantee cancelled due to claim"/>
+                                <entry key-value="RETURNED" display-value="Original guarantee has been returned"/>
+                                <entry key-value="BENREQST" display-value="Beneficiary request for cancellation"/>
+                                <entry key-value="PAYOUT" display-value="Buyer payment outside the guarantee"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="LOS_STUS" name="LOSApprovalStatus" code="AAT">
+                    <description><![CDATA[LOS Approval status]]></description>
+                    <dbtype type="DB_CHAR" length="35"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="PENDING" display-value="PENDING"/>
+                                <entry key-value="APPROVED" display-value="APPROVED"/>
+                                <entry key-value="REJECT" display-value="REJECT"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="CUATDEBC" name="CustAutoDebitedForCharges" code="AAK">
+                    <description><![CDATA[Customer automatically debited for charges]]></description>
+                    <dbtype type="TI_LOGICAL"/>
+                    <default><![CDATA[Y]]></default>
+                    <control-type>
+                        <checkbox true-value="Y" false-value="N">
+                            <label-text><![CDATA[Customer automatically debited for charges]]></label-text>
+                        </checkbox>
+                    </control-type>
+                </field>
+                <field column="CASH_COL" name="CashCollateralCode" code="AAR">
+                    <description><![CDATA[Cash collateral code]]></description>
+                    <dbtype type="DB_CHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="CHANNEL" name="Channel" code="AAN">
+                    <description><![CDATA[Channel]]></description>
+                    <dbtype type="DB_VARCHAR" length="8"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="TI" display-value="TI"/>
+                                <entry key-value="MTP" display-value="MTP"/>
+                                <entry key-value="LOS" display-value="LOS"/>
+                                <entry key-value="MTPPRV" display-value="MTPPRV"/>
+                                <entry key-value="LOSPRV" display-value="LOSPRV"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="PRIORITY" name="Priority" code="AAM">
+                    <description><![CDATA[Priority]]></description>
+                    <dbtype type="DB_VARCHAR" length="1"/>
+                    <default><![CDATA[4]]></default>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="1" display-value="Urgent"/>
+                                <entry key-value="2" display-value="High"/>
+                                <entry key-value="3" display-value="Medium"/>
+                                <entry key-value="4" display-value="Low"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="GOODCODE" name="GoodsCode" code="ABQ">
+                    <description><![CDATA[Goods code]]></description>
+                    <dbtype type="DB_VARCHAR" length="35"/>
+                    <control-type>
+                        <text lines="1"/>
+                    </control-type>
+                </field>
+                <field column="DISCAMNT" name="DiscountAmount" code="ABB">
+                    <description><![CDATA[Discount amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="ADVPAYAM" name="AdvancedPaymentAmount" code="AAZ">
+                    <description><![CDATA[Advanced payment amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_1"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="TOTINVAM" name="TotalInvoiceAmount" code="AAX">
+                    <description><![CDATA[Total invoice amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_2"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="BANKOFGR" name="BANKofGR" code="ABF">
+                    <description><![CDATA[Bank of GR]]></description>
+                    <dbtype type="DB_CHAR" length="50"/>
+                    <control-type>
+                        <combo>
+                            <fixedmap>
+                                <entry key-value="065" display-value="065  ;ΛΟΓ/ΣΜΟΙ ΜΕΤΑΞΥ ΚΑΤΟΙΚΩΝ ΣΕ ΞΝ"/>
+                                <entry key-value="090" display-value="090  ;ΚΛΕΙΣΙΜΟ ΠΡΟΣΩΡΙΝΟΥ ΛΟΓ. ΣΕ ΞΝ"/>
+                                <entry key-value="101" display-value="101  ;ΕΞΑΓΩΓΕΣ ΑΓΑΘΩΝ"/>
+                                <entry key-value="102" display-value="102  ;ΕΙΣΑΓΩΓΕΣ ΑΓΑΘΩΝ"/>
+                                <entry key-value="104" display-value="104  ;ΤΡΙΓΩΝΙΚΗ ΠΩΛΗΣΗ ΑΓΑΘΩΝ"/>
+                                <entry key-value="111" display-value="111  ;ΕΠΕΞΕΡΓΑΣΙΑ ΑΓΑΘΩΝ ΣΤΗΝ ΕΛΛΑΔΑ"/>
+                                <entry key-value="112" display-value="112  ;ΕΠΕΞΕΡΓΑΣΙΑ ΑΓΑΘΩΝ ΣΤΟ ΕΞΩΤΕΡ."/>
+                                <entry key-value="131" display-value="131  ;ΕΦΟΔΙΑ ΜΕΤΑΦΟΡΙΚΩΝ ΜΕΣΩΝ"/>
+                                <entry key-value="202" display-value="202  ;ΘΑΛΑΣΣΙΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="211" display-value="211  ;ΑΕΡΟΠΟΡΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="221" display-value="221  ;ΣΙΔΗΡΟΔΡΟΜΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="231" display-value="231  ;ΟΔΙΚΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="241" display-value="241  ;ΜΕΤΑΦΟΡΕΣ ΜΕΣΩ ΣΩΛΗΝΑΓΩΓΩΝ"/>
+                                <entry key-value="251" display-value="251  ;ΛΟΙΠΕΣ ΜΕΤΑΦΟΡΕΣ"/>
+                                <entry key-value="271" display-value="271  ;ΤΑΧΥΔΡΟΜΙΚΕΣ ΥΠΗΡΕΣΙΕΣ"/>
+                                <entry key-value="272" display-value="272  ;ΥΠΗΡΕΣΙΕΣ COURIER"/>
+                                <entry key-value="2911" display-value="2911 ;ΑΣΦΑΛΕΙΕΣ ΜΕΤΑΦΟΡΩΝ"/>
+                                <entry key-value="301" display-value="301  ;ΧΡΗΜΑΤΟΟΙΚΟΝΟΜΙΚΕΣ ΥΠΗΡΕΣΙΕΣ"/>
+                                <entry key-value="321" display-value="321  ;ROYALTIES"/>
+                                <entry key-value="331" display-value="331  ;ΔΙΑΦΟΡΑ ΑΞΙΑΣ ΤΡΙΓ.ΠΩΛ./ΑΓΟΡΑΣ"/>
+                                <entry key-value="332" display-value="332  ;ΛΟΙΠΕΣ ΕΜΠΟΡ. ΥΠΗΡ.(ΠΡΟΜ.ΑΝΤ.)"/>
+                                <entry key-value="911" display-value="911  ;ΣΥΜΨΗΦΙΣΜΟΣ"/>
+                                <entry key-value="924" display-value="924  ;ΕΜΒΑΣΜΑΤΑ ΚΑΝΟΝΙΣΜΟΥ 2560"/>
+                            </fixedmap>
+                        </combo>
+                    </control-type>
+                </field>
+                <field column="INVOAMNT" name="InvoiceAmount" code="ABD">
+                    <description><![CDATA[Invoice amount]]></description>
+                    <dbtype type="TI_MONEY" reference="CCY_3"/>
+                    <control-type>
+                        <special type="money"/>
+                    </control-type>
+                </field>
+                <field column="GOODPROD" name="GoodsProductionCountry" code="ABW">
+                    <description><![CDATA[Goods Production Country]]></description>
+                    <dbtype type="TI_COUNTRY"/>
+                    <control-type>
+                        <special type="country"/>
+                    </control-type>
+                </field>
+                <field column="GOODDEST" name="GoodsDestinationCountry" code="ABY">
+                    <description><![CDATA[Goods Destination Country]]></description>
+                    <dbtype type="TI_COUNTRY"/>
+                    <control-type>
+                        <special type="country"/>
+                    </control-type>
+                </field>
+            </fields>
+            <layouts>
+                <layout name="Default" field-group="Default">
+                </layout>
+            </layouts>
+            <associations>
+                <association major="EGT" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ELC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ESB" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ICC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="IDC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="IGT" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ILC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ISB" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="OCC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+                <association major="ODC" minor="M">
+                    <layout-ref name="Default"/>
+                </association>
+            </associations>
+        </extension>
+    </extensions>
+    <static-defs table-prefix="PIR">
+        <static name="PIRCRS" entity="CRS">
+            <description><![CDATA[Customer Identifier]]></description>
+            <fields>
+                <field column="CRS" name="CRS">
+                    <description><![CDATA[CRS]]></description>
+                    <dbtype type="DB_INTEGER"/>
+                    <default><![CDATA[1]]></default>
+                </field>
+            </fields>
+        </static>
+    </static-defs>
+</customisation>

@@ -1,0 +1,92 @@
+<project name="deploy-customisation" default="deploy" basedir=".">
+
+    <property name="project.name" value="deploy-customisation" />
+    <property name="workspace.folder" value="${basedir}/.." />
+    <property name="project.folder" value="${basedir}" />
+    <property file="${project.folder}/project.properties" />
+    <property name="software.folder" value="${bundle.folder}/software" />
+    <property name="software.customisation.folder" value="${software.folder}/components/modules/customisation" />
+    <property name="customisation.project.file" value="customisation.xml"/>
+
+    <target name="generate">
+        <ant antfile="${software.folder}/lib/customisation/build-project.xml" target="compile" inheritall="false">
+            <property name="customisation.project.folder" value="${basedir}"/>
+            <property name="customisation.project.file" value="${customisation.project.file}"/>
+            <property name="software.customisation.folder" value="${software.customisation.folder}"/>
+        </ant>
+    </target>
+
+    <target name="script-substitution">
+	<!-- Creating database scripts with ${schema} substituted for ${schema} property -->
+	<delete dir="${project.folder}/build/scripts"/>
+	<mkdir dir="${project.folder}/build/scripts"/>
+	<copy todir="${project.folder}/build/scripts">
+		<fileset dir="${project.folder}/src/gen/scripts">
+			<include name="o*.sql"/>
+		</fileset>
+		<fileset dir="${project.folder}/src/main/scripts">
+			<include name="*.sql"/>
+		</fileset>
+	</copy>
+	<replace dir="${project.folder}/build/scripts">
+		<include name="*.sql"/>
+		<replacefilter
+			token="$${schema}"
+			value="${jdbc.schema}" />
+	</replace>
+    </target>
+
+    <target name="package">
+        <ant antfile="${software.folder}/lib/customisation/build-project.xml" target="package" inheritall="false">
+            <property name="customisation.project.folder" value="${basedir}"/>
+            <property name="customisation.project.file" value="${customisation.project.file}"/>
+            <property name="software.customisation.folder" value="${software.customisation.folder}"/>
+        </ant>
+	<antcall target="script-substitution"/>
+    </target>
+
+    <target name="deploy">
+        <ant antfile="${software.folder}/lib/customisation/build-project.xml" inheritall="false">
+            <property name="customisation.project.folder" value="${basedir}"/>
+            <property name="customisation.project.file" value="${customisation.project.file}"/>
+            <property name="software.customisation.folder" value="${software.customisation.folder}"/>
+        </ant>
+	<antcall target="script-substitution"/>
+    </target>
+
+    <target name="undeploy">
+        <ant antfile="${software.folder}/lib/customisation/build-project.xml" target="undeploy" inheritall="false">
+            <property name="customisation.project.folder" value="${basedir}"/>
+            <property name="customisation.project.file" value="${customisation.project.file}"/>
+            <property name="software.customisation.folder" value="${software.customisation.folder}"/>
+        </ant>
+    </target>
+
+    <target name="deploy-db">
+    	<echo message="Substituting schema: ${jdbc.schema}"/>
+	<antcall target="script-substitution"/>
+	<sql	driver="${jdbc.driver}"
+		url="${jdbc.url}"
+		userid="${jdbc.userid}"
+		password="${jdbc.password}"
+		classpath="${jdbc.classpath}"
+		onerror="continue"
+	>
+		<filelist dir="${project.folder}/build/scripts" files="pre_install.sql oExtData.sql oExtDefns.sql post_install.sql"/>
+	</sql>
+    </target>
+
+    <target name="update-customization-version">
+	<antcall target="script-substitution"/>
+	<sql	driver="${jdbc.driver}"
+		url="${jdbc.url}"
+		userid="${jdbc.userid}"
+		password="${jdbc.password}"
+		classpath="${jdbc.classpath}"
+		onerror="continue"
+	>
+		<filelist dir="${project.folder}/build/scripts" files="oExtDefns.sql"/>
+	</sql>
+    </target>
+    
+</project>

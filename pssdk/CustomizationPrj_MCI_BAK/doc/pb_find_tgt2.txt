@@ -1,0 +1,52 @@
+
+
+SELECT swiftcode,
+       addressee
+INTO   :ls_new_dest,
+       :ls_addressee
+FROM  swcodes_tgt2
+WHERE swiftcode = :as_dest  AND
+      valid_till >= :adt_valeur AND valid_from <= :adt_valeur
+Using itr_trans;
+
+IF itr_trans.SQLCODE < 0 Then
+	iel_jag.Log( itr_trans.SQLerrtext)
+	its_jag.SetAbort()
+	Return -1
+End if
+
+If NOT IsEmpty( ls_addressee ) Then
+
+	astr_swift.swiftcode = ls_addressee
+	
+	il_error = 1
+	
+	// ÂÑÅÈÇÊÅ Destination
+	SELECT sname1,
+	       sname2,
+		 sname3,
+		 sname4
+	INTO   :astr_swift.sname1,
+	       :astr_swift.sname2,
+			 :astr_swift.sname3,
+			 :astr_swift.sname4
+	FROM  swcodes
+	WHERE swiftcode = :ls_addressee
+	Using itr_trans;
+	
+	If itr_trans.SQLCODE < 0 Then 
+		iel_jag.Log(itr_trans.SQLERRTEXT)
+		its_jag.SetAbort()
+		Return -1
+	End if
+	
+	If itr_trans.SQLCODE = 100 Then
+		// ÄÅÍ ÂÑÅÈÇÊÅ ÔÏ Destination óôï swcodes
+		il_error = 9001
+	End If
+	
+	
+End if
+
+its_jag.SetComplete()
+Return il_error

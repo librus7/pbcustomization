@@ -1,0 +1,52 @@
+
+string
+-------------
+TFM		Transfer method	4
+TFMD	Transfer method description	SWIFT
+
+
+
+
+
+table
+--------------
+MSGF	Message OUT details - Principal.
+---------------------------
+
+
+FRMT	Message format	
+MSGT	Message type	
+SNDR	Sender	
+MTXT	Message text	
+MTXF	Message text - formatted	
+RECR	Receiver	
+MSID	Message ID	
+MTXE	Embed message text
+
+
+
+MSGT	Message OUT details
+---------------------------
+FRMT	Message format	
+DATE	Date sent	
+MSGT	Message type	
+SNDR	Sender	
+RECV	Receiver	
+MTXT	Message text	
+MTXTA	Message text - actual message	
+MTXF	Message text - formatted
+
+
+// ADV Advising Bank
+			//String paneSentToSWCODE = routerCallbacks.getPaneCallbacks().getEventFieldAsText("ADV", "p", "s");
+			//validationDetails.addWarning(WarningType.Other , "onValidate  paneSentToSWCODE "+paneSentToSWCODE);
+			// AVLB Available with Bank Name - party
+
+			// AVLT Available with type (expanded)
+			//String availableWithTypeExpanded = routerCallbacks.getPaneCallbacks().getEventFieldAsText("AVLT", "s", "");
+			//validationDetails.addWarning(WarningType.Other, "onValidate  availableWithTypeExpanded "+availableWithTypeExpanded);
+
+			
+			//validationDetails.addWarning(WarningType.Other , "onValidate  availableWithType "+availableWithType);
+			//sentToSWCODE = routerCallbacks.getEventFieldAsText("ADV", "p", "s");
+			

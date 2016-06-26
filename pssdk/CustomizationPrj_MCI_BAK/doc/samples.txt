@@ -1,0 +1,60 @@
+//private static void findGoodsFullShortDescr(RouterCallbacks callback){
+//	Loggers.method().enter(LOG);
+//
+//	String goodsCode = (String)callback.getPaneCallbacks().getCustomField(GOODS_CODE);
+//
+//	//
+//	//JDBC select 
+//	try {
+//
+//		//Context ctx = new InitialContext();
+//		//DataSource ds = (DataSource)ctx.lookup("java:/jdbc/zone");
+//
+//		DataSource ds = ZoneScope.getInstance().getDataSource(ZONE_DATASOURCE);
+//
+//		if (null==ds) {
+//			LOG.error("Error initializing datasource ({})", ZONE_DATASOURCE);
+//		}
+//
+//		Connection con = ds.getConnection();
+//
+//		if (null==con) {
+//			LOG.error("Error initializing connection on datasource ({})", ZONE_DATASOURCE);
+//		}
+//
+//		String sql = String.format("select SHORTDSC from PIRGOODSFULL where CODE = '%s' ", goodsCode.trim());
+//		Statement stm = con.createStatement();
+//
+//		if (null==stm) {
+//			LOG.error("Error initializing statement in connection of datasource ({})", ZONE_DATASOURCE);
+//		}
+//
+//		ResultSet rs = stm.executeQuery(sql);
+//
+//		if (null==rs) {
+//			LOG.error("Error initializing resultset on statement in connection of datasource ({})", ZONE_DATASOURCE);
+//		}
+//
+//		if (null!=rs){
+//			while (rs.next()){
+//				String goodsFullShortDescription = rs.getString("SHORTDSC");
+//				if (!StringUtils.isBlank(goodsFullShortDescription)){
+//					callback.setCustomField("GoodsFullShortDescription", goodsFullShortDescription);
+//					callback.getPaneCallbacks().setCustomField("GoodsFullShortDescription", callback.getCustomField(GOODS_FULL_SHORT_DESCRIPTION));
+//					break;
+//				}
+//			}
+//		}
+//
+//		if (null!=rs) rs.close();
+//		if (null!=stm) stm.close();
+//		if (null!=con) con.close();
+//
+//	} catch (SQLException e) {
+//		throw new RuntimeException("exception getting goods code short description", e);
+//	}
+//	finally {
+//		Loggers.method().exit(LOG);
+//	}
+//
+//}
